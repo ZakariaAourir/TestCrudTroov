@@ -1,0 +1,31 @@
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark
+  .container-fluid
+    .navbar-header
+      button.navbar-toggler.collapsed(type='button', data-toggle='collapse', data-target='#navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') Troov
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.mr-auto.navbar-left
+        if user
+          li.nav-item
+            a.nav-link(href='/homepage')
+              | Homepage
+              span.sr-only (current)
+      ul.nav.navbar-nav.navbar-right
+        if user
+          li.nav-item
+              a.nav-link(href='/logout')
+                | Logout
+                span.sr-only (current)
+        else
+          li.nav-item
+              a.nav-link(href='/login')
+                | Login
+                span.sr-only (current)
+          li.nav-item
+              a.nav-link(href='/register')
+                | Register
+                span.sr-only
